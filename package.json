@@ -1,0 +1,22 @@
+{
+  "name": "joitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedoryakubovich/joitor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fedoryakubovich/joitor/issues"
+  },
+  "homepage": "https://github.com/fedoryakubovich/joitor#readme",
+  "devDependencies": {
+    "@hapi/joi": "^16.1.7"
+  }
+}

@@ -3,9 +3,9 @@ const faker = require('faker');
 
 const server = require('./server');
 
-describe('Extra Parameters', () => {
-  describe('Invalid request with extra parameters', () => {
-    it('Should return unsuccessful response with status 400', (done) => {
+describe('Extra Parameters', function() {
+  describe('Invalid request with extra parameters', function() {
+    it('Should return unsuccessful response with status 400', function(done) {
       const payload = {
         email: faker.internet.email(),
         password: faker.internet.password(16),

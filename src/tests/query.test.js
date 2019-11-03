@@ -3,9 +3,9 @@ const faker = require('faker');
 
 const server = require('./server');
 
-describe('Query', () => {
-  describe('Valid query parameters', () => {
-    it('Should return successfully response with status 200', (done) => {
+describe('Query', function() {
+  describe('Valid query parameters', function() {
+    it('Should return successfully response with status 200', function(done) {
       const email = faker.internet.email();
       const username = faker.internet.userName();
 
@@ -16,8 +16,8 @@ describe('Query', () => {
     });
   });
 
-  describe('Invalid query parameters', () => {
-    it('Should return unsuccessful response with status 400', (done) => {
+  describe('Invalid query parameters', function() {
+    it('Should return unsuccessful response with status 400', function(done) {
       const email = faker.random.number();
 
       request(server)

@@ -3,9 +3,9 @@ const faker = require('faker');
 
 const server = require('./server');
 
-describe('Cookies', () => {
-  describe('Valid cookies parameters', () => {
-    it('Should return successfully response with status 200', (done) => {
+describe('Cookies', function() {
+  describe('Valid cookies parameters', function() {
+    it('Should return successfully response with status 200', function(done) {
       const sessionId = faker.random.uuid();
 
       request(server)
@@ -15,8 +15,8 @@ describe('Cookies', () => {
     });
   });
 
-  describe('Invalid query parameters', () => {
-    it('Should return unsuccessful response with status 400', (done) => {
+  describe('Invalid query parameters', function() {
+    it('Should return unsuccessful response with status 400', function(done) {
       const sessionId = faker.random.number();
 
       request(server)

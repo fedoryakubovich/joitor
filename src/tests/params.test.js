@@ -3,9 +3,9 @@ const faker = require('faker');
 
 const server = require('./server');
 
-describe('Params', () => {
-  describe('Valid parameters', () => {
-    it('Should return successfully response with status 200', (done) => {
+describe('Params', function() {
+  describe('Valid parameters', function() {
+    it('Should return successfully response with status 200', function(done) {
       const userId = faker.random.uuid();
       const bookId = faker.random.uuid();
 
@@ -15,8 +15,8 @@ describe('Params', () => {
     });
   });
 
-  describe('Invalid parameters', () => {
-    it('Should return unsuccessful response with status 400', (done) => {
+  describe('Invalid parameters', function() {
+    it('Should return unsuccessful response with status 400', function(done) {
       const userId = faker.random.number();
       const bookId = faker.random.word();
 

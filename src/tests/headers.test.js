@@ -3,9 +3,9 @@ const faker = require('faker');
 
 const server = require('./server');
 
-describe('Headers', () => {
-  describe('Valid headers', () => {
-    it('Should return successfully response with status 200', (done) => {
+describe('Headers', function() {
+  describe('Valid headers', function() {
+    it('Should return successfully response with status 200', function(done) {
       const token = faker.random.uuid();
 
       request(server)
@@ -15,8 +15,8 @@ describe('Headers', () => {
     });
   });
 
-  describe('Invalid headers', () => {
-    it('Should return successfully response with status 200', (done) => {
+  describe('Invalid headers', function() {
+    it('Should return successfully response with status 200', function(done) {
       request(server)
         .get('/auth/ping')
         .expect('Content-Type', /json/)

@@ -1,11 +1,15 @@
-const objectIsEmpty = require('./objectIsEmpty');
+const Joi = require('@hapi/joi');
+const isEmpty = require('lodash.isempty');
 
 const validate = (data, schema) => {
-  if (objectIsEmpty(data) || objectIsEmpty(schema)) return;
+  const { allowUnknown } = schema;
+  delete schema.allowUnknown;
+  const { error: errors } = Joi.object(schema).validate(data, {
+    abortEarly: false,
+    allowUnknown: allowUnknown || true,
+  });
 
-  const { error: errors } = Joi.object(schema).validate(data, { abortEarly: false });
-
-  if (objectIsEmpty(errors) || errors.details.length === 0) return;
+  if (isEmpty(errors) || errors.details.length === 0) return;
 
   return errors.details.reduce((errorsList, error) => {
     const {

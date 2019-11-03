@@ -1,7 +1,9 @@
-const objectIsEmpty = require('./objectIsEmpty');
+const isEmpty = require('lodash.isempty');
+
+const validate = require('./validate');
 
 const validation = (schema) => {
-  if (objectIsEmpty(schema)) throw new Error('Please provide a validation schema');
+  if (isEmpty(schema)) throw new Error('Please provide a validation schema');
 
   return (req, res, next) => {
     const errors = {};
@@ -16,7 +18,7 @@ const validation = (schema) => {
       }
     });
 
-    if (objectIsEmpty(errors)) {
+    if (isEmpty(errors)) {
       return next();
     }
 

@@ -1,8 +1,9 @@
 {
   "name": "joitor",
   "version": "1.0.0",
-  "description": "",
+  "description": "Middleware that helps validate body, headers, cookies, params and query in express application using joi validation.",
   "main": "index.js",
+  "keywords": ["joi", "express", "validator", "validation", "express-joi"],
   "scripts": {
     "start:server": "nodemon src/tests/server",
     "test": "mocha src/tests/*.test.js --exit",
@@ -13,8 +14,11 @@
     "type": "git",
     "url": "git+https://github.com/fedoryakubovich/joitor.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Fedor Yakubovich",
+    "email": "f.yakubovich@gmail.com"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/fedoryakubovich/joitor/issues"
   },

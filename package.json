@@ -1,9 +1,20 @@
 {
   "name": "joitor",
-  "version": "1.0.0",
+  "version": "0.1.4",
   "description": "Middleware that helps validate body, headers, cookies, params and query in express application using joi validation.",
-  "main": "index.js",
-  "keywords": ["joi", "express", "validator", "validation", "express-joi"],
+  "main": "src/lib/index.js",
+  "files": [
+    "src/lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "joi",
+    "express",
+    "validator",
+    "validation",
+    "express-joi"
+  ],
   "scripts": {
     "start:server": "nodemon src/tests/server",
     "test": "mocha src/tests/*.test.js --exit",

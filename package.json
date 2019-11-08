@@ -1,0 +1,56 @@
+{
+  "name": "joitor",
+  "version": "0.2.0",
+  "description": "Middleware that helps validate body, headers, cookies, params and query in express application using joi validation.",
+  "main": "src/lib/index.js",
+  "files": [
+    "src/lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "joi",
+    "express",
+    "validator",
+    "validation",
+    "express-joi"
+  ],
+  "scripts": {
+    "start:server": "nodemon src/tests/server",
+    "test": "mocha src/tests/*.test.js --exit",
+    "lint": "eslint ./src/",
+    "lint:fix": "eslint --fix ./src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedoryakubovich/joitor.git"
+  },
+  "author": {
+    "name": "Fedor Yakubovich",
+    "email": "f.yakubovich@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fedoryakubovich/joitor/issues"
+  },
+  "homepage": "https://github.com/fedoryakubovich/joitor#readme",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-mocha": "^6.2.1",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.19.4",
+    "prettier": "^1.18.2",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "@hapi/joi": "^16.1.7",
+    "lodash.isempty": "^4.4.0"
+  }
+}

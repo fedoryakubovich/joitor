@@ -1,4 +1,4 @@
-# Joitor &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fedoryakubovich/joitor/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/joitor.svg?style=flat)](https://www.npmjs.com/package/joitor) [![Build Status](https://img.shields.io/travis/fedoryakubovich/joitor/master.svg)](https://travis-ci.com/)
+# Joitor &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fedoryakubovich/joitor/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/joitor.svg?style=flat)](https://www.npmjs.com/package/joitor) [![Build Status](https://img.shields.io/travis/com/fedoryakubovich/joitor/master.svg?style=flat)](https://travis-ci.com/fedoryakubovich/joitor) [![NPM downloads](https://img.shields.io/npm/dm/joitor.svg?style=flat)](https://npmcharts.com/compare/joitor?minimal=true)
 
 Joitor is a middleware that helps validate `body`, `headers`, `cookies`, `params` and `query` in express application using [Joi](https://hapi.dev/family/joi/?v=16.1.7) validation.
 
@@ -8,6 +8,7 @@ Joitor is a middleware that helps validate `body`, `headers`, `cookies`, `params
 - [Features](#features)
 - [Usage](#usage)
 - [Options](#options)
+- [Tests](#tests)
 - [Errors](#errors)
 
 ## Installation
@@ -79,6 +80,13 @@ const signupValidation = {
       .required(),
   },
 };
+```
+
+## Tests
+
+```
+npm install
+npm test
 ```
 
 ## Errors

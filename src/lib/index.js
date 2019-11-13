@@ -23,5 +23,5 @@ const validation = (schema, options = {}) => {
   };
 };
 
+exports = module.exports = validation;
 exports.JoitorError = JoitorError;
-module.exports = validation;

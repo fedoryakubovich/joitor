@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "start:server": "nodemon src/tests/server",
-    "test": "mocha src/tests/*.test.js --exit",
+    "test": "nyc mocha src/tests/*.test.js --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint ./src/",
     "lint:fix": "eslint --fix ./src/"

@@ -10,8 +10,8 @@ install:
   - npm install
 script:
   - npm test
-  - npm run coverage
 os:
   - 'linux'
   - 'osx'
   - 'windows'
+after_success: npm run coverage

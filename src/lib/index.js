@@ -1,8 +1,9 @@
 const isEmpty = require('lodash.isempty');
 
 const validate = require('./validate');
+const JoitorError = require('./error');
 
-const validation = (schema) => {
+const validation = (schema, options = {}) => {
   if (isEmpty(schema)) throw new Error('Please provide a validation schema');
 
   return (req, res, next) => {
@@ -18,12 +19,9 @@ const validation = (schema) => {
       }
     });
 
-    if (isEmpty(errors)) {
-      return next();
-    }
-
-    return res.status(400).json({ status: 400, statusText: 'Bad Request', errors });
+    return isEmpty(errors) ? next() : next(new JoitorError(errors, options));
   };
 };
 
-module.exports = validation;
+exports = module.exports = validation;
+exports.JoitorError = JoitorError;

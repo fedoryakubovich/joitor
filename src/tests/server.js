@@ -15,10 +15,17 @@ app.use(cookieParser());
 const server = http.createServer(app);
 
 app.post('/signup', validate(validations.signup), (req, res) => {
-  res.status(200).send();
+  res.status(200).json(req.body);
 });
+app.post(
+  '/exist-signup',
+  validate(validations.signup, { status: 409, statusText: 'Conflict' }),
+  (req, res) => {
+    res.status(200).json(req.body);
+  },
+);
 app.post('/signin', validate(validations.signin), (req, res) => {
-  res.status(200).send();
+  res.status(200).json(req.body);
 });
 app.get('/users/:userId/books/:bookId', validate(validations.getUsersBook), (req, res) => {
   res.status(200).json(req.params);
@@ -34,6 +41,10 @@ app.get('/session', validate(validations.session), (req, res) => {
 });
 app.put('/users/:userId', validate(validations.updateUser), (req, res) => {
   res.status(200).json({ body: req.body, params: req.params });
+});
+
+app.use(function(err, req, res, next) {
+  res.status(err.status || 400).json(err);
 });
 
 server.listen(3000, () => {

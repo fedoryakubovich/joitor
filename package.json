@@ -1,6 +1,6 @@
 {
   "name": "joitor",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Middleware that helps validate body, headers, cookies, params and query in express application using joi validation.",
   "main": "src/lib/index.js",
   "files": [
@@ -61,7 +61,7 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "@hapi/joi": "^17.1.0",
+    "@hapi/joi": "^17.1.1",
     "lodash.isempty": "^4.4.0"
   }
 }

@@ -61,7 +61,7 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "@hapi/joi": "^17.1.0",
+    "@hapi/joi": "^17.1.1",
     "lodash.isempty": "^4.4.0"
   }
 }

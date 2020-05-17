@@ -21,7 +21,8 @@
     "test": "nyc mocha src/tests/*.test.js --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint ./src/",
-    "lint:fix": "eslint --fix ./src/"
+    "lint:fix": "eslint --fix ./src/",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",

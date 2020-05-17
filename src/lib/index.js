@@ -2,6 +2,7 @@ const Joi = require('@hapi/joi');
 const isEmpty = require('lodash.isempty');
 
 class JoitorError extends Error {
+
   constructor(errors, options) {
     super();
 

@@ -2,7 +2,6 @@ const Joi = require('@hapi/joi');
 const isEmpty = require('lodash.isempty');
 
 class JoitorError extends Error {
-
   constructor(errors, options) {
     super();
 
@@ -11,7 +10,6 @@ class JoitorError extends Error {
     this.status = options.status || 400;
     this.statusText = options.statusText || 'Bad Request';
   }
-
 }
 
 JoitorError.prototype.toJSON = function () {

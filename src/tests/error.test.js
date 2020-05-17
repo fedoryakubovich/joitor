@@ -3,9 +3,9 @@ const faker = require('faker');
 
 const server = require('./server');
 
-describe('Error', function() {
-  describe('Change status to 404', function() {
-    it('Should return unsuccessfully response with status 409', function(done) {
+describe('Error', function () {
+  describe('Change status to 404', function () {
+    it('Should return unsuccessfully response with status 409', function (done) {
       const payload = {
         email: faker.internet.email(),
       };

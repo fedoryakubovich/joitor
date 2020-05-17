@@ -1,7 +1,46 @@
+const Joi = require('@hapi/joi');
 const isEmpty = require('lodash.isempty');
 
-const validate = require('./validate');
-const JoitorError = require('./error');
+class JoitorError extends Error {
+  constructor(errors, options) {
+    super();
+
+    this.name = this.constructor.name;
+    this.errors = errors;
+    this.status = options.status || 400;
+    this.statusText = options.statusText || 'Bad Request';
+  }
+}
+
+JoitorError.prototype.toJSON = function () {
+  return {
+    status: this.status,
+    statusText: this.statusText,
+    errors: this.errors,
+  };
+};
+
+const validate = (data, schema) => {
+  const { allowUnknown } = schema;
+  delete schema.allowUnknown;
+  const { error: errors } = Joi.object(schema).validate(data, {
+    abortEarly: false,
+    allowUnknown: allowUnknown || true,
+  });
+
+  if (isEmpty(errors) || errors.details.length === 0) return;
+
+  return errors.details.reduce((errorsList, error) => {
+    const {
+      path: [field],
+      message,
+    } = error;
+
+    errorsList[field] = message;
+
+    return errorsList;
+  }, {});
+};
 
 const validation = (schema, options = {}) => {
   if (isEmpty(schema)) throw new Error('Please provide a validation schema');

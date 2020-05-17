@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const http = require('http');
 const cookieParser = require('cookie-parser');
 
@@ -8,8 +7,8 @@ const validate = require('../lib');
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 const server = http.createServer(app);
@@ -43,7 +42,7 @@ app.put('/users/:userId', validate(validations.updateUser), (req, res) => {
   res.status(200).json({ body: req.body, params: req.params });
 });
 
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   res.status(err.status || 400).json(err);
 });
 

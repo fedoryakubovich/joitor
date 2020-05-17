@@ -5,3 +5,4 @@
 - Fixed all eslint warnings
 - Updated dependencies
 - Added CHANGELOG.md
+- Added github actions

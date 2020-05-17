@@ -1,5 +1,6 @@
 language: node_js
 node_js:
+  - '14'
   - '13'
   - '12'
   - '10'
@@ -9,6 +10,7 @@ cache:
 install:
   - npm install
 script:
+  - npm run lint
   - npm test
 os:
   - 'linux'

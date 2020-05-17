@@ -50,10 +50,7 @@
     }
   },
   "lint-staged": {
-    "./src/*.{js,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint src/*.js --fix-dry-run"
-    ]
+    "*.js": "prettier --write"
   },
   "devDependencies": {
     "cookie-parser": "^1.4.5",

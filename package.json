@@ -1,7 +1,7 @@
 {
   "name": "joitor",
-  "version": "0.2.3",
-  "description": "Middleware that helps validate body, headers, cookies, params and query in express application using joi validation.",
+  "version": "0.3.0",
+  "description": "Joitor is a middleware that helps validate body, headers, cookies, params and query in express application using joi validation.",
   "main": "src/lib/index.js",
   "files": [
     "src/lib",

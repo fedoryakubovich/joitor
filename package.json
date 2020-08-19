@@ -1,6 +1,6 @@
 {
   "name": "joitor",
-  "version": "0.3.4",
+  "version": "1.0.0",
   "description": "Joitor is a middleware that helps validate body, headers, cookies, params and query in express application using joi validation.",
   "main": "src/lib/index.js",
   "files": [
@@ -14,7 +14,8 @@
     "validator",
     "validation",
     "express-joi",
-    "joi-express"
+    "joi-express",
+    "middleware"
   ],
   "scripts": {
     "start:server": "nodemon src/tests/server",
@@ -47,21 +48,21 @@
   "devDependencies": {
     "cookie-parser": "^1.4.5",
     "coveralls": "^3.1.0",
-    "eslint": "^7.5.0",
+    "eslint": "^7.7.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-mocha": "^7.0.1",
+    "eslint-plugin-mocha": "^8.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "mocha": "^8.0.1",
+    "mocha": "^8.1.1",
     "nodemon": "^2.0.4",
     "nyc": "^15.1.0",
     "prettier": "^2.0.5",
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "@hapi/joi": "^17.1.1",
+    "joi": "^17.2.1",
     "lodash.isempty": "^4.4.0"
   }
 }

@@ -20,7 +20,7 @@
   "scripts": {
     "start:server": "nodemon src/tests/server",
     "test": "nyc mocha src/tests/*.test.js --exit",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "npx nyc --reporter=lcov npm test -- --coverage && npx codecov",
     "lint": "eslint ./src/",
     "lint:fix": "eslint --fix ./src/"
   },
@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "codecov": "^3.8.3",
     "cookie-parser": "^1.4.5",
     "coveralls": "^3.1.1",
     "eslint": "^7.32.0",

@@ -1,4 +1,4 @@
-# Joitor &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fedoryakubovich/joitor/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/joitor.svg?style=flat)](https://www.npmjs.com/package/joitor) [![Build Status](https://img.shields.io/travis/com/fedoryakubovich/joitor/master.svg?style=flat)](https://travis-ci.com/fedoryakubovich/joitor) [![NPM downloads](https://img.shields.io/npm/dm/joitor.svg?style=flat)](https://npmcharts.com/compare/joitor?minimal=true)[![Coverage Status](https://coveralls.io/repos/fedoryakubovich/joitor/badge.svg?branch=master)](https://coveralls.io/github/fedoryakubovich/joitor?branch=master)
+# Joitor &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fedoryakubovich/joitor/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/joitor.svg?style=flat)](https://www.npmjs.com/package/joitor) [![Build Status](https://github.com/fedoryakubovich/joitor/actions/workflows/tests.yml/badge.svg)](https://github.com/fedoryakubovich/joitor/actions/workflows/tests.yml) [![NPM downloads](https://img.shields.io/npm/dm/joitor.svg?style=flat)](https://npmcharts.com/compare/joitor?minimal=true)[![codecov](https://codecov.io/gh/fedoryakubovich/joitor/branch/main/graph/badge.svg?token=466ST8RD7V)](https://codecov.io/gh/fedoryakubovich/joitor)
 
 Joitor is a middleware that helps validate `body`, `headers`, `cookies`, `params` and `query` in express application using [Joi](https://hapi.dev/family/joi/?v=16.1.7) validation.
 
@@ -41,14 +41,9 @@ app.use(cookieParser());
 
 const signupValidation = {
   body: {
-    email: Joi.string()
-      .email()
-      .required(),
+    email: Joi.string().email().required(),
 
-    password: Joi.string()
-      .min(6)
-      .max(256)
-      .required(),
+    password: Joi.string().min(6).max(256).required(),
   },
 };
 
@@ -70,14 +65,9 @@ const signupValidation = {
   body: {
     allowUnknown: true,
 
-    email: Joi.string()
-      .email()
-      .required(),
+    email: Joi.string().email().required(),
 
-    password: Joi.string()
-      .min(6)
-      .max(256)
-      .required(),
+    password: Joi.string().min(6).max(256).required(),
   },
 };
 ```
@@ -118,7 +108,7 @@ const validate = require('joitor');
 
 // some code
 
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   if (err instanceof validate.JoitorError) {
     // handler for the error
     return res.status(err.status || 400).json(err);

@@ -9,14 +9,15 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
-        node: [12.x, 14.x, 16.x, 17.x, 18.x]
+        node-version: [12.x, 14.x, 16.x, 17.x, 18.x]
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node }} in ${{ matrix.os }}
+      - name: Use Node.js ${{ matrix.node-version }} in ${{ matrix.os }}
         uses: actions/setup-node@v2
         with:
-          node: ${{ matrix.node }}
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
       - run: npm ci
       - run: npm run lint
       - run: npm test
@@ -29,7 +30,7 @@ jobs:
     - name: Use Node.js 16.x
       uses: actions/setup-node@v2
       with: 
-        node: 16.x
+        node-version: 16.x
     - name: Run the tests
       run: |
         npm ci

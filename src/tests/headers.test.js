@@ -1,12 +1,12 @@
 const request = require('supertest');
-const faker = require('faker');
+const { faker } = require('@faker-js/faker');
 
 const server = require('./server');
 
 describe('Headers', function () {
   describe('Valid headers', function () {
     it('Should return successfully response with status 200', function (done) {
-      const token = faker.random.uuid();
+      const token = faker.string.uuid();
 
       request(server)
         .get('/auth/ping')

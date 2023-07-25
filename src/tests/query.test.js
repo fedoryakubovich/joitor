@@ -1,5 +1,5 @@
 const request = require('supertest');
-const faker = require('faker');
+const { faker } = require('@faker-js/faker');
 
 const server = require('./server');
 
@@ -18,7 +18,7 @@ describe('Query', function () {
 
   describe('Invalid query parameters', function () {
     it('Should return unsuccessful response with status 400', function (done) {
-      const email = faker.random.number();
+      const email = faker.number.int();
 
       request(server)
         .get(`/clients`)

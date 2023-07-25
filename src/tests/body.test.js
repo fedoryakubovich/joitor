@@ -1,5 +1,5 @@
 const request = require('supertest');
-const faker = require('faker');
+const { faker } = require('@faker-js/faker');
 
 const server = require('./server');
 
@@ -8,7 +8,7 @@ describe('Body', function () {
     it('Should return successfully response with status 200', function (done) {
       const payload = {
         email: faker.internet.email(),
-        password: faker.internet.password(16),
+        password: faker.internet.password({ length: 16 }),
       };
 
       request(server).post('/signup').send(payload).expect(200, done);

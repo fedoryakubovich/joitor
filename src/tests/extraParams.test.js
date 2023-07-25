@@ -1,5 +1,5 @@
 const request = require('supertest');
-const faker = require('faker');
+const { faker } = require('@faker-js/faker');
 
 const server = require('./server');
 
@@ -8,7 +8,7 @@ describe('Extra Parameters', function () {
     it('Should return unsuccessful response with status 400', function (done) {
       const payload = {
         email: faker.internet.email(),
-        password: faker.internet.password(16),
+        password: faker.internet.password({ length: 16 }),
         username: faker.internet.userName(),
       };
 

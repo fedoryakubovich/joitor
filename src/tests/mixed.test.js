@@ -1,5 +1,5 @@
 const request = require('supertest');
-const faker = require('faker');
+const { faker } = require('@faker-js/faker');
 
 const server = require('./server');
 
@@ -7,7 +7,7 @@ describe('Mixed', function () {
   describe('Valid request', function () {
     it('Should return successfully response with status 200', function (done) {
       const email = faker.internet.email();
-      const userId = faker.random.uuid();
+      const userId = faker.string.uuid();
 
       request(server).put(`/users/${userId}`).send({ email }).expect(200, done);
     });
@@ -15,7 +15,7 @@ describe('Mixed', function () {
 
   describe('Invalid request with empty payload', function () {
     it('Should return unsuccessful response with status 400', function (done) {
-      const userId = faker.random.number();
+      const userId = faker.number.int();
 
       request(server)
         .put(`/users/${userId}`)
